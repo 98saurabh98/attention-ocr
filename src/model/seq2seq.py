@@ -61,6 +61,7 @@ from six.moves import xrange  # pylint: disable=redefined-builtin
 from six.moves import zip     # pylint: disable=redefined-builtin
 
 import tensorflow as tf
+from tensorflow.contrib.rnn.python.ops import core_rnn_cell
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
@@ -70,7 +71,7 @@ from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import nn_ops
 from tensorflow.contrib.rnn.python.ops import rnn, rnn_cell
 from tensorflow.python.ops import variable_scope
-linear = rnn_cell._linear # pylint: disable=protected-access
+linear = core_rnn_cell._linear # pylint: disable=protected-access
 
 def _extract_argmax_and_embed(embedding, output_projection=None,
                               update_embedding=True):
